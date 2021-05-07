@@ -154,9 +154,9 @@ jobs:
           cat devices/${{matrix.target}}/.config >> .config
         fi
         cp -Rf ./diy/* ./ || true
-        if [[ ${{ github.actor }} == "garypang13" ]] && {
+        if [[ ${{github.actor}} == "garypang13" ]]; then
           sed -i "s/index()/index()\nif luci.sys.exec(\"cat \/etc\/openwrt_release | grep -o -E ^DISTRIB_DESCRIPTION='.*SNAPSHOT.*GaryPang'\") == \"\" then return end/g" package/feeds/custom/luci-app*/luasrc/controller/*.lua
-        }
+        fi
 
     - name: Apply patches
       run: |
