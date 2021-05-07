@@ -47,7 +47,6 @@ echo '
 sub-web
 ddns-scripts-aliyun
 ddns-scripts-dnspod
-aria2
 mwan3
 cdnspeedtest
 qBittorrent
