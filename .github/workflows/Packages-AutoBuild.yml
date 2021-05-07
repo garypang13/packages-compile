@@ -291,7 +291,7 @@ jobs:
       if: env.SSH_PRIVATE_KEY && ! contains(github.event.action, 'noser') && env.DEPLOY && (contains(github.event.action, 'aarch64') || contains(github.event.action, 'r2s') || contains(github.event.action, 'x86_64') || contains(github.event.action, 'mipsel') || contains(github.event.action, 'ac2100'))
       with:
         SSH_PRIVATE_KEY: ${{ env.SSH_PRIVATE_KEY }}
-        ARGS: "-avzr --delete-after --exclude='node*' --exclude='libx264*' --exclude='naiveproxy*'"
+        ARGS: "-avzr --delete-after --exclude='node*' --exclude='libx264*' --exclude='naiveproxy*' --exclude='aria2*'"
         SOURCE: "packages/"
         REMOTE_HOST: op.supes.top
         REMOTE_USER: root
