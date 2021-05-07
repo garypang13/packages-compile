@@ -50,7 +50,6 @@ ddns-scripts-dnspod
 mwan3
 cdnspeedtest
 qBittorrent
-bpytop
 pandownload-fake-server
 ' >> ipk
 
