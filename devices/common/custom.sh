@@ -5,7 +5,7 @@ shopt -s extglob
 sed -i '/	refresh_config();/d' scripts/feeds
 
 rm -rf feeds/custom/{frp,xray-core,oaf,luci-app-{turboacc,mtwifi},naiveproxy,aria2,MentoHUST*,bpytop}
-rm -rf feeds/packages/libs
+rm -rf feeds/packages/libs/!(freetype,libev,cjson)
 rm -Rf feeds/luci/{applications,collections,protocols,themes,libs}
 rm -Rf feeds/luci/modules/!(luci-base)
 
