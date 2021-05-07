@@ -4,8 +4,8 @@ shopt -s extglob
 
 sed -i '/	refresh_config();/d' scripts/feeds
 
-rm -rf feeds/custom/{frp,xray-core,oaf,luci-app-{turboacc,mtwifi}}
-
+rm -rf feeds/custom/{frp,xray-core,oaf,luci-app-{turboacc,mtwifi},naiveproxy,aria2}
+rm -rf feeds/packages/libs/db47
 rm -Rf feeds/luci/{applications,collections,protocols,themes,libs}
 rm -Rf feeds/luci/modules/!(luci-base)
 
@@ -19,7 +19,6 @@ rm -Rf feeds/base/package/network/services/!(ppp)
 rm -Rf feeds/base/package/utils/!(util-linux|lua)
 rm -Rf feeds/base/package/system/!(opkg|uci|ubus)
 rm -Rf feeds/custom/luci-app-*/po/!(zh_Hans)
-rm -Rf feeds/custom/{naiveproxy,aria2}
 
 svn co https://github.com/immortalwrt/packages/trunk/lang/golang feeds/packages/lang/golang
 
