@@ -24,7 +24,7 @@ svn co https://github.com/immortalwrt/packages/trunk/lang/golang feeds/packages/
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-rm -rf feeds/packages/libs/!(freetype|libgd|libev|cjson|boost|libmaxminddb|c-ares)
+#rm -rf feeds/packages/libs/!(freetype|libgd|libev|cjson|boost|libmaxminddb|c-ares)
 
 sed -i 's/Os/O2/g' include/target.mk
 rm -rf ./feeds/packages/lang/golang
