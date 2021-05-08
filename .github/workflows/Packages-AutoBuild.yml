@@ -221,7 +221,7 @@ jobs:
         mkdir packages packages/build
         cp -Rf openwrt/bin/packages/*/custom/* packages/ || true
         # cp -Rf openwrt/bin/packages/*/packages/python3* packages/
-        tar -zcf packages/build/${{ env.MTARGET }}.tar.gz staging_dir build_dir
+        tar -zcf packages/build/${{ env.MTARGET }}.tar.gz openwrt/staging_dir openwrt/build_dir
         cp openwrt/.config  packages/${{matrix.target}}_packages.config
         cp openwrt/error*.log  packages/ || true
         echo "FIRMWARE=$PWD/packages" >> $GITHUB_ENV
