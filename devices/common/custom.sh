@@ -7,11 +7,11 @@ sed -i '/	refresh_config();/d' scripts/feeds
 rm -rf feeds/custom/{frp,xray-core,oaf,luci-app-{turboacc,mtwifi},naiveproxy,aria2,MentoHUST*,bpytop}
 rm -Rf feeds/luci/{applications,collections,protocols,themes,libs}
 rm -Rf feeds/luci/modules/!(luci-base)
-
+rm -rf feeds/packages/libs/!(freetype|libev|c-ares|cjson|boost|libmaxminddb)
 rm -Rf feeds/packages/!(lang|libs|devel|utils|net)
 rm -Rf feeds/packages/utils/!(pcsc-lite|xz)
 rm -Rf feeds/packages/net/!(mosquitto|curl)
-rm -Rf feeds/packages/lang
+rm -Rf feeds/packages/lang/!(python)
 rm -Rf feeds/base/package/{kernel,firmware}
 rm -Rf feeds/base/package/network/!(services)
 rm -Rf feeds/base/package/network/services/!(ppp)
@@ -23,8 +23,6 @@ svn co https://github.com/immortalwrt/packages/trunk/lang/golang feeds/packages/
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
-
-#rm -rf feeds/packages/libs/!(freetype|libgd|libev|cjson|boost|libmaxminddb|c-ares)
 
 sed -i 's/Os/O2/g' include/target.mk
 rm -rf ./feeds/packages/lang/golang
