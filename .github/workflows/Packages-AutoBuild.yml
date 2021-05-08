@@ -209,7 +209,6 @@ jobs:
         cd openwrt
         make defconfig
           echo -e "$(($(nproc)+1)) thread compile"
-          make package/luci-base/compile -j$(($(nproc)+1)) || make package/luci-base/compile -j1 V=s
           make package/${{ github.event.action }}/compile -j$(($(nproc)+1)) || make package/${{ github.event.action }}/compile -j1 V=s
 
     - name: Check space usage
