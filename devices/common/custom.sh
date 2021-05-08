@@ -12,7 +12,7 @@ rm -Rf feeds/packages/!(lang|libs|devel|utils|net)
 rm -Rf feeds/packages/utils/!(pcsc-lite|xz)
 rm -Rf feeds/packages/net/!(mosquitto|curl)
 rm -Rf feeds/packages/lang/!(python)
-rm -Rf package/feeds/packages/python3
+rm -Rf feeds/packages/lang/python/python3
 rm -Rf feeds/base/package/{kernel,firmware}
 rm -Rf feeds/base/package/network/!(services)
 rm -Rf feeds/base/package/network/services/!(ppp)
