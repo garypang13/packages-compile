@@ -5,7 +5,6 @@ shopt -s extglob
 sed -i '/	refresh_config();/d' scripts/feeds
 
 rm -rf feeds/custom/{frp,xray-core,oaf,luci-app-{turboacc,mtwifi},naiveproxy,aria2,MentoHUST*,bpytop}
-rm -rf feeds/packages/libs/!(freetype|libev|cjson|boost)
 rm -Rf feeds/luci/{applications,collections,protocols,themes,libs}
 rm -Rf feeds/luci/modules/!(luci-base)
 
@@ -24,6 +23,8 @@ svn co https://github.com/immortalwrt/packages/trunk/lang/golang feeds/packages/
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+
+rm -rf feeds/packages/libs/!(freetype|libev|cjson|boost|libmaxminddb)
 
 sed -i 's/Os/O2/g' include/target.mk
 rm -rf ./feeds/packages/lang/golang
