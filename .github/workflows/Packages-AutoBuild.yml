@@ -197,7 +197,7 @@ jobs:
           echo -e "$(($(nproc)+1)) thread compile"
           make package/luci-base/compile -j$(($(nproc)+1)) || make package/luci-base/compile V=s;exit;
           for ipk in $(cat ipk); do
-            make package/$ipk/compile -j$(($(nproc)+1)) || {(make package/$ipk/compile V=s >>error_$ipk.log 2>&1 || true) &}
+            make package/$ipk/compile -j$(($(nproc)+1)) || make package/$ipk/compile V=s >>error_$ipk.log 2>&1 || true
           done
         fi
         make package/index
