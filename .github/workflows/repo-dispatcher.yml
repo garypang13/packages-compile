@@ -58,8 +58,8 @@ jobs:
         -H "Accept: application/vnd.github.everest-preview+json" \
         -H "Authorization: token ${{ secrets.REPO_TOKEN }}" \
         -d '{"event_type": "aarch64 ${{ env.SSH }}", "client_payload": {"target": "nanopi-r2s"}}'
-        # curl \
-        # -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
-        # -H "Accept: application/vnd.github.everest-preview+json" \
-        # -H "Authorization: token ${{ secrets.REPO_TOKEN }}" \
-        # -d '{"event_type": "aarch64_cortex-a72 ${{ env.SSH }}", "client_payload": {"target": "Rpi-4B"}}'
+        curl \
+         -X POST https://api.github.com/repos/${{ github.repository }}/dispatches \
+         -H "Accept: application/vnd.github.everest-preview+json" \
+         -H "Authorization: token ${{ secrets.REPO_TOKEN }}" \
+         -d '{"event_type": "aarch64_cortex-a72 ${{ env.SSH }}", "client_payload": {"target": "Rpi-4B"}}'
