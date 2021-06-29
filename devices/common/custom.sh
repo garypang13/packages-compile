@@ -15,7 +15,7 @@ rm -Rf feeds/packages/utils/!(pcsc-lite|xz)
 rm -Rf feeds/packages/net/!(mosquitto|curl)
 rm -Rf feeds/packages/lang/!(python|golang)
 rm -Rf feeds/base/package/{kernel,firmware}
-rm -Rf feeds/base/package/network/!(services,utils)
+rm -Rf feeds/base/package/network/!(services|utils)
 rm -Rf feeds/base/package/network/services/!(ppp)
 rm -Rf feeds/base/package/utils/!(util-linux|lua)
 rm -Rf feeds/base/package/system/!(opkg|ubus|uci)
