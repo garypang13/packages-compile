@@ -9,7 +9,6 @@ rm -rf feeds/custom/{frp,xray-core,.github,diy,mt-drivers,mt7601u-ap,openwrt-ful
 rm -Rf feeds/luci/{applications,collections,protocols,themes,libs,docs}
 rm -Rf feeds/luci/modules/!(luci-base)
 # rm -rf feeds/packages/libs/!(libev|c-ares|cjson|boost|lib*|expat|tiff|freetype|udns|pcre2)
-rm -rf feeds/packages/libs/libcups
 rm -Rf feeds/packages/!(lang|libs|devel|utils|net)
 rm -Rf feeds/packages/utils/!(pcsc-lite|xz)
 rm -Rf feeds/packages/net/!(mosquitto|curl)
