@@ -276,7 +276,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
         files: |
-            "${{ env.FIRMWARE }}/*"
+            ${{ env.FIRMWARE }}/*
             openwrt/error*.log
         name: ${{ env.NAME }}
         tag_name: ${{ env.date }}_${{ env.MTARGET }}
