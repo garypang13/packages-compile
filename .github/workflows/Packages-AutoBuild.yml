@@ -311,7 +311,7 @@ jobs:
         script: |
           # cp -R /www/wwwroot/op.supes.top/packages/keep/common/* /www/wwwroot/op.supes.top/packages/${{ env.MTARGET }}/
           # cp -R /www/wwwroot/op.supes.top/packages/keep/${{ env.MTARGET }}/* /www/wwwroot/op.supes.top/packages/${{ env.MTARGET }}/
-          opkg all
+          opkg ${{ env.MTARGET }}
 
     - name: WeChat notification
       continue-on-error: true
