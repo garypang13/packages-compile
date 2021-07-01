@@ -226,7 +226,6 @@ jobs:
         mkdir packages
         cp -Rf openwrt/bin/packages/*/custom/* packages/ || true
         # cp -Rf openwrt/bin/packages/*/packages/python3* packages/
-        cp openwrt/error*.log  packages/ || true
         echo "FIRMWARE=$PWD/packages" >> $GITHUB_ENV
         Emoji=("🎉" "🤞" "✨" "🎁" "🎈" "🎄" "🎨" "💋" "🍓" "🍕" "🍉" "💐" "🌴" "🚀" "🛸" "🗽" "⛅" "🌈" "🔥" "⛄" "🐶" "🏅" "🦄" "🐤")
         RANDOM=$$$(date +%s)
@@ -276,7 +275,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
-        files: "${{ env.FIRMWARE }}/*"
+        files: |
+            "${{ env.FIRMWARE }}/*"
+            openwrt/error*.log
         name: ${{ env.NAME }}
         tag_name: ${{ env.date }}_${{ env.MTARGET }}
         body_path: release.txt
