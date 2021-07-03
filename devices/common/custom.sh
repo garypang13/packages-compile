@@ -4,7 +4,7 @@ shopt -s extglob
 
 sed -i '/	refresh_config();/d' scripts/feeds
 
-rm -rf feeds/custom/{frp,xray-core,.github,diy,mt-drivers,mt7601u-ap,openwrt-fullconenat,mtk-eip93,rtl8*,r81*,shortcut-fe,fast-classifier,luci-app-mtwifi,.gitignore,LICENSE,README.md}
+rm -rf feeds/custom/{frp,xray-core,.github,diy,mt-drivers,mt7601u-ap,openwrt-fullconenat,mtk-eip93,rtl8*,shortcut-fe,fast-classifier,luci-app-mtwifi,.gitignore,LICENSE,README.md}
 
 rm -Rf feeds/luci/{applications,collections,protocols,themes,libs,docs}
 rm -Rf feeds/luci/modules/!(luci-base)
