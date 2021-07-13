@@ -32,14 +32,6 @@ jobs:
         workflow_id: 4439874
         access_token: ${{ github.token }}
 
-    - name: Trigger Packages Update
-      run: |
-        sudo timedatectl set-timezone "$TZ"
-        curl -X POST https://api.github.com/repos/garypang13/openwrt-packages/dispatches \
-        -H "Accept: application/vnd.github.everest-preview+json" \
-        -H "Authorization: token ${{ secrets.REPO_TOKEN }}" \
-        --data '{"event_type": "update"}'
-
     - name: Trigger matrix Update
       run: |
         gitdate=$(curl -H "Authorization: token ${{ secrets.REPO_TOKEN }}" -s "https://api.github.com/repos/garypang13/openwrt-packages/commits?&per_page=1" | jq -r '.[0].commit.committer.date')
